@@ -16,12 +16,22 @@ I'm a sophomore, born and raised here in San Diego. I have two brothers, and a d
 
 <hr style ="border 80px lined Indigo">
 
-<img src="images/IMG_0104.jpeg" width="180" height="250" >
 
-<div class= "image">
-My image! This is my freeform image, showing a couple of my interests. There's headphones, because I like to listen to music, and a yarn ball. I crochet a lot in my free time, it's one of my favorite hobbies. There's a Korean flag in the background, because I'm Korean. Other than that, I like to sleep or binge Netflix shows. 
+<div class="image">
+<img src="images/IMG_0104.jpeg" width="180" height="250" >
 </div>
 
+<div class= "imagetext">
+My image! This is my freeform image, showing a couple of my interests. There's headphones, because I like to listen to music, and a yarn ball. I crochet a lot in my free time, it's one of my favorite hobbies. There's a Korean flag in the background, because I'm Korean. Other than that, I like to sleep or binge Netflix shows. 
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <hr>
 
 
@@ -30,4 +40,4 @@ My image! This is my freeform image, showing a couple of my interests. There's h
     .text{border: 4px dotted DarkViolet;}
 hr {border: 6px dotted Indigo}
 hr {background-color: white}
-
+.image{float: left;}
