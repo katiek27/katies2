@@ -41,3 +41,5 @@ My image! This is my freeform image, showing a couple of my interests. There's h
 hr {border: 6px dotted Indigo}
 hr {background-color: white}
 .image{float: left;}
+.text{font-size: 30px}
+.imagetext{font-size: 30px}
