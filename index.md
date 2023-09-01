@@ -26,6 +26,14 @@ My image! This is my freeform image, showing a couple of my interests. There's h
 </div>
 <hr>
 
+## *Weeks 0-3*
+| Week | Work | Description |
+
+| 0 | Learned about the tools, started installing VSCode, Github, creating repositories, and made a Freeform image. | Adjusted the theme for github repo and established a CS mindset |
+
+| 1 | Started manipulating and changing index.md, changed theme and added stylistic choices to text | Added our freeform image to blog, a couple sentences about ourselves, made sure the page was running on github. |
+
+| 2 | Applied theme to github, created a new repository, added snake game | We had a mini lesson about git and created a new repository in order to access notebooks. Still in the process of learning about Jupyter. |
 
 
 <style>
