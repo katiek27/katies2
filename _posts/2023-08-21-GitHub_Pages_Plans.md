@@ -2,17 +2,17 @@
 toc: true
 comments: false
 layout: post
-title: More Detail Plan
-description: Example Plan!!! Analyze hacks and plan.
+title: Styling our Homepage
+description: Taking a look at how to customize our webpages and make it unique to us. Finished our live reviews and added images. 
 type: plans
 courses: { compsci: {week: 1} }
 ---
 
 ### PBL Unit 1 / Week 1
 Learning outcome. Building a personal and running GitHub Pages.
-- Monday: Schedule Live Review - 4 minutes. Finish Tools setup. Attend Office Hours on HTML, CSS, JS and Student Blog.
+- Monday: Attended tech talk to finish downloading tools and making sure everything was running. We started running "make" and "make stop" to get our servers running.
 - Tuesday: Read [Markdown Student Page](https://nighthawkcoders.github.io/teacher//c4.3/c5.0/2023/08/17/markdown-html_fragments.html), Attend Office Hours on Updating Home Page and Plan Page.
-- Wednesday: Work Plan Page and Home Page.  Prep with pair on live review.
+- Wednesday: Starting our live reviews from here, it's important that partners were able to check up on each other and help each other.
 - Thursday: 10:45 live review per Canvas.  Read [Linux Shell and Bash](https://nighthawkcoders.github.io/teacher//5.a/c4.1/2023/08/16/linux_shell_IPYNB_2_.html).  Tranfer blog and customize for my lab notebook.
 
 
