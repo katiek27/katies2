@@ -1,6 +1,6 @@
 ---
 toc: true
-comments: false
+comments: true
 layout: post
 title: Snake Game
 description: We are adding a snake game to the blog!
@@ -20,8 +20,8 @@ courses: { compsci: {week: 2} }
     canvas{
         display: none;
         border-style: solid;
-        border-width: 10px;
-        border-color: #FFFFFF;
+        border-width: 20px;
+        border-color: #A071CD;
     }
     canvas:focus{
         outline: none;
@@ -29,7 +29,7 @@ courses: { compsci: {week: 2} }
 
     /* All screens style */
     #gameover p, #setting p, #menu p{
-        font-size: 20px;
+        font-size: 30px;
     }
 
     #gameover a, #setting a, #menu a{
@@ -259,7 +259,7 @@ courses: { compsci: {week: 2} }
             for(let i = 1; i < snake.length; i++){
                 // Game over test
                 if (snake[0].x === snake[i].x && snake[0].y === snake[i].y){
-                    showScreen(SCREEN_GAME_OVER);
+                    showScreen(SCREEN_GAME_OVER_);
                     return;
                 }
             }
@@ -272,7 +272,7 @@ courses: { compsci: {week: 2} }
             }
             // Repaint canvas
             ctx.beginPath();
-            ctx.fillStyle = "royalblue";
+            ctx.fillStyle = "SlateBlue";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // Paint snake
             for(let i = 0; i < snake.length; i++){
@@ -368,7 +368,8 @@ courses: { compsci: {week: 2} }
         let setWall = function(wall_value){
             wall = wall_value;
             if(wall === 0){screen_snake.style.borderColor = "#606060";}
-            if(wall === 1){screen_snake.style.borderColor = "#FFFFFF";}
+            if(wall === 1){screen_snake.style.borderColor = "#A071CD";}
         }
     })();
 </script>
+
