@@ -20,8 +20,8 @@ courses: { compsci: {week: 2} }
     canvas{
         display: none;
         border-style: solid;
-        border-width: 20px;
-        border-color: #A071CD;
+        border-width: 10px;
+        border-color: #E0FFFF;
     }
     canvas:focus{
         outline: none;
@@ -268,18 +268,18 @@ courses: { compsci: {week: 2} }
                 snake[snake.length] = {x: snake[0].x, y: snake[0].y};
                 altScore(++score);
                 addFood();
-                activeDot(food.x, food.y);
+                appleDot(food.x, food.y);
             }
             // Repaint canvas
             ctx.beginPath();
-            ctx.fillStyle = "SlateBlue";
+            ctx.fillStyle = "Azure";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // Paint snake
             for(let i = 0; i < snake.length; i++){
-                activeDot(snake[i].x, snake[i].y);
+                snakeDot(snake[i].x, snake[i].y);
             }
             // Paint food
-            activeDot(food.x, food.y);
+            appleDot(food.x, food.y);
             // Debug
             //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
             // Recursive call after speed delay, déjà vu
@@ -308,33 +308,38 @@ courses: { compsci: {week: 2} }
         }
         /* Key Inputs and Actions */
         /////////////////////////////////////////////////////////////
-        let changeDir = function(key){
-            // test key and switch direction
-            switch(key) {
-                case 37:    // left arrow
-                    if (snake_dir !== 1)    // not right
-                        snake_next_dir = 3; // then switch left
-                    break;
-                case 38:    // up arrow
-                    if (snake_dir !== 2)    // not down
-                        snake_next_dir = 0; // then switch up
-                    break;
-                case 39:    // right arrow
-                    if (snake_dir !== 3)    // not left
-                        snake_next_dir = 1; // then switch right
-                    break;
-                case 40:    // down arrow
-                    if (snake_dir !== 0)    // not up
-                        snake_next_dir = 2; // then switch down
-                    break;
-            }
-        }
+       let changeDir = function(key){
+    // test key and switch direction
+    switch(key) {
+        case 65:    // A key (left)
+            if (snake_dir !== 1)    // not right
+                snake_next_dir = 3; // then switch left
+            break;
+        case 87:    // W key (up)
+            if (snake_dir !== 2)    // not down
+                snake_next_dir = 0; // then switch up
+            break;
+        case 68:    // D key (right)
+            if (snake_dir !== 3)    // not left
+                snake_next_dir = 1; // then switch right
+            break;
+        case 83:    // S key (down)
+            if (snake_dir !== 0)    // not up
+                snake_next_dir = 2; // then switch down
+            break;
+    }
+}
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
-        let activeDot = function(x, y){
-            ctx.fillStyle = "#FFFFFF";
-            ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
-        }
+        let appleDot = function(x, y) {
+    ctx.font = "10px Arial"; // Adjust the font size here (e.g., 10px, 12px)
+    ctx.fillText("🍎", x * BLOCK, y * BLOCK);
+}
+/* Dot for Snake part */
+let snakeDot = function(x, y) {
+    ctx.font = "15px Arial"; // Adjust the font size here (e.g., 10px, 12px)
+    ctx.fillText("🟢", x * BLOCK, y * BLOCK); // Use a different character for the snake, e.g., '■'
+}
         /* Random food placement */
         /////////////////////////////////////////////////////////////
         let addFood = function(){
@@ -367,8 +372,8 @@ courses: { compsci: {week: 2} }
         /////////////////////////////////////////////////////////////
         let setWall = function(wall_value){
             wall = wall_value;
-            if(wall === 0){screen_snake.style.borderColor = "#606060";}
-            if(wall === 1){screen_snake.style.borderColor = "#A071CD";}
+            if(wall === 0){screen_snake.style.borderColor = "#E0FFFF";}
+            if(wall === 1){screen_snake.style.borderColor = "#E0FFFF";}
         }
     })();
 </script>
