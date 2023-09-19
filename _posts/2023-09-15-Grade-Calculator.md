@@ -11,10 +11,27 @@ courses: { compsci: {week: 4} }
 <html>
 <head>
     <title>Score Calculator</title>
+   <style>
+        body {
+            font-family: Arial; /* Define your desired font here for the entire body */
+        }
+
+        .header {
+            font-family: Courier; /* Define a different font for the header */
+        }
+    </style>
 </head>
 <body>
+    <!-- Maximum and Minimum Values -->
+    <div>
+        <strong>Maximum:</strong> <span id="maximum">0.0</span><br>
+        <strong>Minimum:</strong> <span id="minimum">0.0</span><br>
+    </div>
+
     <!-- Help Message -->
-    <h3>Input scores, press tab to add each new number.</h3>
+    <div class="header">
+    <h3>Input scores, press tab to add new number.</h3>
+    </div>
     <!-- Totals -->
     <ul>
         <li>
@@ -30,6 +47,9 @@ courses: { compsci: {week: 4} }
     <!-- Reset Button -->
     <button id="resetButton">Reset</button>
     <script>
+        var max = -Infinity; // Initialize max to negative infinity
+        var min = Infinity;  // Initialize min to positive infinity
+
         // Executes on input event and calculates totals
         function calculator(event) {
             var key = event.key;
@@ -39,15 +59,28 @@ courses: { compsci: {week: 4} }
                 var array = document.getElementsByName('score'); // setup array of scores
                 var total = 0;  // running total
                 var count = 0;  // count of input elements with valid values
+
                 for (var i = 0; i < array.length; i++) {  // iterate through array
                     var value = array[i].value;
                     if (parseFloat(value)) {
                         var parsedValue = parseFloat(value);
                         total += parsedValue;  // add to running total
                         count++;
+
+                        // Update max and min values
+                        if (parsedValue > max) {
+                            max = parsedValue;
+                        }
+                        if (parsedValue < min) {
+                            min = parsedValue;
+                        }
                     }
                 }
-                // update totals
+                // Update maximum and minimum values
+                document.getElementById('maximum').innerHTML = max.toFixed(2);
+                document.getElementById('minimum').innerHTML = min.toFixed(2);
+
+                // Update totals
                 document.getElementById('total').innerHTML = total.toFixed(2); // show two decimals
                 document.getElementById('count').innerHTML = count;
                 if (count > 0) {
@@ -94,13 +127,21 @@ courses: { compsci: {week: 4} }
             document.getElementById('total').innerHTML = '0.0';
             document.getElementById('count').innerHTML = '0.0';
             document.getElementById('average').innerHTML = '0.0';
-            // Remove existing input lines except the first one (index 0)
+
+            // Remove existing input lines
             var scoresDiv = document.getElementById('scores');
-            while (scoresDiv.children.length > 1) {
-                scoresDiv.removeChild(scoresDiv.lastChild);
+            while (scoresDiv.firstChild) {
+                scoresDiv.removeChild(scoresDiv.firstChild);
             }
-            // Set focus on the first input line
-            document.getElementById('0').focus();
+
+            // Reset maximum and minimum values
+            max = -Infinity;
+            min = Infinity;
+            document.getElementById('maximum').innerHTML = '0.0';
+            document.getElementById('minimum').innerHTML = '0.0';
+
+            // Recreate the first input line
+            newInputLine(0);
         }
         // Add an event listener to the reset button
         document.getElementById('resetButton').addEventListener('click', reset);
@@ -109,3 +150,4 @@ courses: { compsci: {week: 4} }
     </script>
 </body>
 </html>
+
