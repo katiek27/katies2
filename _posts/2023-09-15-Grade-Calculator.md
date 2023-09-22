@@ -19,6 +19,9 @@ courses: { compsci: {week: 4} }
         .header {
             font-family: Courier; /* Define a different font for the header */
         }
+        h3{
+            text-align: center
+        }
     </style>
 </head>
 <body>
